@@ -3,12 +3,10 @@ package com.webjony.form_web.controlador;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import com.webjony.form_web.modelo.ContactoModelo;
 import com.webjony.form_web.servicio.ContactoServicio;
-
+//@RequestMapping(path = "/guardarContacto")
 @CrossOrigin(origins = "http://localhost:63342")
 @Controller
 public class ContactoControlador {
@@ -21,6 +19,6 @@ public class ContactoControlador {
         contacto.setCorreo(correo);
         contacto.setMensaje(mensaje);
         contactoServicio.guardarContacto(contacto);
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok("Mensaje enviado correctamente");
     }
 }

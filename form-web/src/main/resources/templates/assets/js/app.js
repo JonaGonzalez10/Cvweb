@@ -148,3 +148,32 @@ function initMap() {
       ]
     });
 }
+
+// contact form
+
+$(document).ready(function() {
+    $('#btncontacto').on('click', function(event) {
+        event.preventDefault();
+
+        var nombre = $('input[name="nombre"]').val();
+        var correo = $('input[name="correo"]').val();
+        var mensaje = $('textarea[name="mensaje"]').val();
+
+        $.ajax({
+            url: 'http://localhost:8080/guardarContacto',
+            type: 'POST',
+            data: {
+                nombre: nombre,
+                correo: correo,
+                mensaje: mensaje
+            },
+            success: function(response) {
+                alert('Mensaje enviado correctamente');
+                // Puedes redirigir o limpiar el formulario aquí si es necesario
+            },
+            error: function(xhr, status, error) {
+                alert('Error al enviar el mensaje');
+            }
+        });
+    });
+});
