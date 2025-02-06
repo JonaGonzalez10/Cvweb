@@ -1,19 +1,11 @@
-/*!
-=========================================================
-* JohnDoe Landing page
-=========================================================
+if (typeof jQuery === 'undefined') {
+    console.error('jQuery no está cargado');
+} else {
+    console.log('jQuery está cargado');
+}
 
-* Copyright: 2019 DevCRUD (https://devcrud.com)
-* Licensed: (https://devcrud.com/licenses)
-* Coded by www.devcrud.com
-
-=========================================================
-
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-*/
-
-// smooth scroll
-$(document).ready(function(){
+/*
+hostinger$(document).ready(function(){
     $(".navbar .nav-link").on('click', function(event) {
 
         if (this.hash !== "") {
@@ -30,7 +22,7 @@ $(document).ready(function(){
         } 
     });
 });
-
+*/
 // protfolio filters
 $(window).on("load", function() {
     var t = $(".portfolio-container");
@@ -60,7 +52,7 @@ $(window).on("load", function() {
 function initMap() {
 // Styles a map in night mode.
     var map = new google.maps.Map(document.getElementById('map'), {
-        center: {lat: 40.674, lng: -73.945},
+        center: {lat: 19.496621698087587, lng: -99.12754860099012},
         zoom: 12,
         scrollwheel:  false,
         navigationControl: false,
@@ -152,24 +144,27 @@ function initMap() {
 // contact form
 
 $(document).ready(function() {
-    $('#btncontacto').on('click', function(event) {
+    $('#contactForm').on('submit', function(event) {
+        console.log('Evento submit capturado');
         event.preventDefault();
 
         var nombre = $('input[name="nombre"]').val();
         var correo = $('input[name="correo"]').val();
         var mensaje = $('textarea[name="mensaje"]').val();
 
+        var queryParams = $.param({
+            nombre: nombre,
+            correo: correo,
+            mensaje: mensaje
+        });
+
         $.ajax({
-            url: 'http://localhost:8080/guardarContacto',
+            url: 'http://localhost:8080/guardarContacto?' + queryParams,
             type: 'POST',
-            data: {
-                nombre: nombre,
-                correo: correo,
-                mensaje: mensaje
-            },
             success: function(response) {
                 alert('Mensaje enviado correctamente');
-                // Puedes redirigir o limpiar el formulario aquí si es necesario
+                document.getElementById('contactForm').reset();
+
             },
             error: function(xhr, status, error) {
                 alert('Error al enviar el mensaje');

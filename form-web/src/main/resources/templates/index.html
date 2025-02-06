@@ -3,16 +3,15 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="Start your development with JohnDoe landing page.">
-    <meta name="author" content="Devcrud">
-    <title>JohnDoe Landing page | Free Bootstrap 4.3.x landing page</title>
+   <meta name="author" content="Jonathan Glz">
+    <title>Jonathan Glz | Freelancer</title>
     <!-- font icons -->
     <link rel="stylesheet" href="assets/vendors/themify-icons/css/themify-icons.css">
     <!-- Bootstrap + JohnDoe main styles -->
 	<link rel="stylesheet" href="assets/css/styles.css">
+    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
 </head>
 <body data-spy="scroll" data-target=".navbar" data-offset="40" id="home">
-    <a href="components.html" class="btn btn-primary btn-component" data-spy="affix" data-offset-top="600"><i class="ti-shift-left-alt"></i> Components</a>
     <header class="header">
         <div class="container">
             <ul class="social-icons pt-3">
@@ -56,10 +55,7 @@
                 </ul>
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#portfolio" class="nav-link">Portfolio</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#blog" class="nav-link">Blog</a>
+                        <a href="#portfolio" class="nav-link">Portafolio</a>
                     </li>
                     <li class="nav-item last-item">
                         <a href="#contact" class="nav-link">Contacto</a>
@@ -375,15 +371,15 @@
                         Web
                     </a>
                 </div>
-                <div class="portfolio-container"> 
+                <div class="portfolio-container">
                     <div class="col-md-6 col-lg-4 web new">
                         <div class="portfolio-item">
-                            <img src="assets/imgs/web-1.jpg" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
+                            <img src="assets/imgs/webelecmontalvo.png" class="img-fluid" alt="Download free bootstrap 4 admin dashboard, free boootstrap 4 templates">
                             <div class="content-holder">
                                 <a class="img-popup" href="assets/imgs/web-1.jpg"></a>
                                 <div class="text-holder">
                                     <h6 class="title">WEB</h6>
-                                    <p class="subtitle">Expedita corporis doloremque velit in totam!</p>
+                                    <p class="subtitle">Aplicaciones web responsivas</p>
                                 </div>
                             </div>   
                         </div>             
@@ -548,12 +544,12 @@
                 <div class="col-lg-8">
                     <div class="contact-form-card">
                         <h4 class="contact-title">Enviame un mensaje</h4>
-                        <form action="/guardarContacto" method="post">
+                        <form id="contactForm" method="POST">
                             <div class="form-group">
                                 <input  class="form-control" type="text" name="nombre" placeholder="Nombre o Empresa *" required>
                             </div>
                             <div class="form-group">
-                                <input class="form-control" type="email" name="correo" placeholder="Correo *" required>
+                                <input class="form-control" type="email" name="correo" placeholder="Correo *" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.(com|net|org|edu|gov|mil|biz|info|mobi|name|aero|jobs|museum)" title="Por favor, ingrese un correo electrónico válido.">
                             </div>
                             <div class="form-group">
                                 <textarea class="form-control" id=" " name="mensaje" placeholder="Mensaje *" rows="7" required></textarea>
@@ -613,7 +609,7 @@
     </footer>
 
 	<!-- core  -->
-    <script src="assets/vendors/jquery/jquery-3.4.1.js"></script>
+
     <script src="assets/vendors/bootstrap/bootstrap.bundle.js"></script>
 
     <!-- bootstrap 3 affix -->
@@ -624,6 +620,7 @@
     
     <!-- Google mpas -->
     <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCtme10pzgKSPeJVJrG1O3tjR6lk98o4w8&callback=initMap"></script>
+
 
     <!-- App js -->
     <script src="assets/js/app.js"></script>
